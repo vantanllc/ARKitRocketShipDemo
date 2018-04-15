@@ -17,6 +17,7 @@ class ViewController: UIViewController {
   let rocketshipNodeName = "rocketship"
   
   // TODO: Initialize an empty array of type SCNNode
+  var planeNodes = [SCNNode]()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -56,9 +57,13 @@ class ViewController: UIViewController {
   
   // TODO: Create add swipe gestures to scene view method
   func addSwipeGestureToSceneView() {
-    let swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.applyForceToRocketship(withGestureRecognizer:)))
-    swipeGestureRecognizer.direction = .up
-    sceneView.addGestureRecognizer(swipeGestureRecognizer)
+    let swipeUpGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.applyForceToRocketship(withGestureRecognizer:)))
+    swipeUpGestureRecognizer.direction = .up
+    sceneView.addGestureRecognizer(swipeUpGestureRecognizer)
+    
+    let swipeDownGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.launchRocketship(withGestureRecognizer:)))
+    swipeDownGestureRecognizer.direction = .down
+    sceneView.addGestureRecognizer(swipeDownGestureRecognizer)
   }
 }
 

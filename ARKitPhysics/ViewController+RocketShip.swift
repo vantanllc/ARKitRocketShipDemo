@@ -57,4 +57,23 @@ extension ViewController {
   }
   
   // TODO: Create launch rocketship method
+  @objc func launchRocketship(withGestureRecognizer recognizer: UIGestureRecognizer) {
+    guard recognizer.state == .ended else { return }
+    
+    let swipeLocation = recognizer.location(in: sceneView)
+    guard let rocketshipNode = getRocketshipNode(from: swipeLocation),
+      let physicsBody = rocketshipNode.physicsBody,
+      let reactorParticleSystem = SCNParticleSystem(named: "reactor", inDirectory: nil),
+      let engineNode = rocketshipNode.childNode(withName: "node2", recursively: false) else { return }
+    
+    physicsBody.isAffectedByGravity = false
+    physicsBody.damping = 0
+    
+    reactorParticleSystem.colliderNodes = planeNodes
+    engineNode.addParticleSystem(reactorParticleSystem)
+    
+    let action = SCNAction.moveBy(x: 0, y: 0.3, z: 0, duration: 3)
+    action.timingMode = .easeInEaseOut
+    rocketshipNode.runAction(action)
+  }
 }

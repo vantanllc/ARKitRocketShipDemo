@@ -32,9 +32,16 @@ extension ViewController: ARSCNViewDelegate {
     node.addChildNode(planeNode)
     
     // TODO: Append plane node to plane nodes array if appropriate
+    planeNodes.append(planeNode)
   }
   
   // TODO: Remove plane node from plane nodes array if appropriate
+  func renderer(_ renderer: SCNSceneRenderer, didRemove node: SCNNode, for anchor: ARAnchor) {
+    guard anchor is ARPlaneAnchor,
+      let planeNode = node.childNodes.first else { return }
+    
+    planeNodes = planeNodes.filter { $0 != planeNode }
+  }
   
   func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
     guard let planeAnchor = anchor as?  ARPlaneAnchor,
