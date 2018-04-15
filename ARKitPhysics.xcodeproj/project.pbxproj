@@ -17,6 +17,7 @@
 		638E27841FEF3FE500C2DE06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 638E27821FEF3FE500C2DE06 /* LaunchScreen.storyboard */; };
 		8B6E6E082083C9A100382FA2 /* ViewController+Rendering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6E6E072083C9A100382FA2 /* ViewController+Rendering.swift */; };
 		8B6E6E0A2083CA9600382FA2 /* ViewController+ARSCNViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6E6E092083CA9600382FA2 /* ViewController+ARSCNViewDelegate.swift */; };
+		8B6E6E0C2083CB5C00382FA2 /* ViewController+RocketShip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6E6E0B2083CB5C00382FA2 /* ViewController+RocketShip.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		638E27851FEF3FE500C2DE06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B6E6E072083C9A100382FA2 /* ViewController+Rendering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Rendering.swift"; sourceTree = "<group>"; };
 		8B6E6E092083CA9600382FA2 /* ViewController+ARSCNViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+ARSCNViewDelegate.swift"; sourceTree = "<group>"; };
+		8B6E6E0B2083CB5C00382FA2 /* ViewController+RocketShip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+RocketShip.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				638E27851FEF3FE500C2DE06 /* Info.plist */,
 				638E27791FEF3FE500C2DE06 /* AppDelegate.swift */,
 				638E277B1FEF3FE500C2DE06 /* ViewController.swift */,
+				8B6E6E0B2083CB5C00382FA2 /* ViewController+RocketShip.swift */,
 				8B6E6E092083CA9600382FA2 /* ViewController+ARSCNViewDelegate.swift */,
 				8B6E6E072083C9A100382FA2 /* ViewController+Rendering.swift */,
 				638E27801FEF3FE500C2DE06 /* Assets.xcassets */,
@@ -174,6 +177,7 @@
 				8B6E6E082083C9A100382FA2 /* ViewController+Rendering.swift in Sources */,
 				638E277C1FEF3FE500C2DE06 /* ViewController.swift in Sources */,
 				638E277A1FEF3FE500C2DE06 /* AppDelegate.swift in Sources */,
+				8B6E6E0C2083CB5C00382FA2 /* ViewController+RocketShip.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
