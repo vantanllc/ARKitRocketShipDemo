@@ -34,8 +34,27 @@ extension ViewController {
   }
   
   // TODO: Create get rocketship node from swipe location method
+  func getRocketshipNode(from swipeLocation: CGPoint) -> SCNNode? {
+    let hitTestResults = sceneView.hitTest(swipeLocation)
+    
+    guard let parentNode = hitTestResults.first?.node.parent,
+      parentNode.name == rocketshipNodeName else { return nil }
+    
+    return parentNode
+  }
   
   // TODO: Create apply force to rocketship method
+  @objc func applyForceToRocketship(withGestureRecognizer recognizer: UIGestureRecognizer) {
+    guard recognizer.state == .ended else { return }
+    
+    let swipeLocation = recognizer.location(in: sceneView)
+    
+    guard let rocketshipNode = getRocketshipNode(from: swipeLocation),
+      let physicsBody = rocketshipNode.physicsBody else { return }
+    
+    let direction = SCNVector3(0, 3, 0)
+    physicsBody.applyForce(direction, asImpulse: true)
+  }
   
   // TODO: Create launch rocketship method
 }

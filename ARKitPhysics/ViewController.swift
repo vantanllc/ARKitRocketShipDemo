@@ -21,6 +21,7 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     addTapGestureToSceneView()
+    addSwipeGestureToSceneView()
     configureLighting()
   }
   
@@ -54,7 +55,11 @@ class ViewController: UIViewController {
   }
   
   // TODO: Create add swipe gestures to scene view method
-  
+  func addSwipeGestureToSceneView() {
+    let swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(ViewController.applyForceToRocketship(withGestureRecognizer:)))
+    swipeGestureRecognizer.direction = .up
+    sceneView.addGestureRecognizer(swipeGestureRecognizer)
+  }
 }
 
 extension float4x4 {
